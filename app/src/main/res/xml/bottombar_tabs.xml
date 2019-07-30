@@ -5,15 +5,15 @@
         icon="@drawable/ic_home_black_24dp"
         title="首页" />
     <tab
-            id="@+id/tab_mv"
-            icon="@drawable/ic_home_black_24dp"
-            title="MV" />
+        id="@+id/tab_mv"
+        icon="@drawable/ic_home_black_24dp"
+        title="MV" />
     <tab
-            id="@+id/tab_vb"
-            icon="@drawable/ic_home_black_24dp"
-            title="V榜" />
+        id="@+id/tab_vb"
+        icon="@drawable/ic_home_black_24dp"
+        title="V榜" />
     <tab
-            id="@+id/tab_yd"
-            icon="@drawable/ic_home_black_24dp"
-            title="悦单" />
+        id="@+id/tab_yd"
+        icon="@drawable/ic_home_black_24dp"
+        title="悦单" />
 </PreferenceScreen>

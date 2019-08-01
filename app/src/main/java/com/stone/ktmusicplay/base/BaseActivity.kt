@@ -28,7 +28,7 @@ abstract class BaseActivity: AppCompatActivity(), AnkoLogger {
     /**
      * adapter listener
      */
-    protected fun initListener() {
+    open protected fun initListener() {
 
     }
 

@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.LocalMainActivity"/>
+        <activity android:name=".ui.activity.SettingActivity" />
+        <activity android:name=".ui.activity.AboutActivity" />
     </application>
 
 </manifest>

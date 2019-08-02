@@ -12,6 +12,7 @@ import com.stone.ktmusicplay.adapter.HomeAdapter
 import com.stone.ktmusicplay.base.BaseFragment
 import com.stone.ktmusicplay.model.HomeItemBean
 import com.stone.ktmusicplay.presenter.impl.HomePresenterImpl
+import com.stone.ktmusicplay.presenter.interf.HomePresenter
 import com.stone.ktmusicplay.util.ThreadUtil
 import com.stone.ktmusicplay.util.URLProviderUtils
 import com.stone.ktmusicplay.view.HomeView
@@ -26,6 +27,9 @@ import java.io.IOException
  * @Description:
  */
 class HomeFragment : BaseFragment(), HomeView {
+    //适配
+    val adapter by lazy { HomeAdapter() }
+    val presenter by lazy { HomePresenterImpl(this) }
     override fun onError(message: String?) {
         myToast("加载数据失败")
     }
@@ -43,9 +47,7 @@ class HomeFragment : BaseFragment(), HomeView {
 
     val TAG : String = "HomeFragment"
 
-    //适配
-    val adapter by lazy { HomeAdapter() }
-    val presenter by lazy { HomePresenterImpl(this) }
+
     override fun initView(): View? {
 
         return View.inflate(context, R.layout.fragment_home, null)

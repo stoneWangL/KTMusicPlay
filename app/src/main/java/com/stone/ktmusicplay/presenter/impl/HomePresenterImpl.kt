@@ -7,6 +7,7 @@ import com.stone.ktmusicplay.model.HomeItemBean
 import com.stone.ktmusicplay.presenter.interf.HomePresenter
 import com.stone.ktmusicplay.util.ThreadUtil
 import com.stone.ktmusicplay.util.URLProviderUtils
+
 import com.stone.ktmusicplay.view.HomeView
 import okhttp3.*
 import java.io.IOException
@@ -16,14 +17,15 @@ import java.io.IOException
  * @CreateDate: 2019/8/2 22:43
  * @Description:
  */
-class HomePresenterImpl(var homeView:HomeView) : HomePresenter {
+class HomePresenterImpl(var homeView:HomeView) : HomePresenter{
+
+
     val TAG = "HomePresenterImpl"
 
     /**
      * 初始化数据或者刷新数据
      */
     override fun loadDatas() {
-        //        getResult()
         val path = URLProviderUtils.getHomeUrl(0,20)
         val client = OkHttpClient()
         val request = Request.Builder()
@@ -31,18 +33,18 @@ class HomePresenterImpl(var homeView:HomeView) : HomePresenter {
             .get() //请求方式
             .build()
 
-        client.newCall(request)
-            .enqueue(object : Callback {
+
+        client.newCall(request).enqueue(object : Callback {
                 /**
                  * 子线程调用
                  */
-                override fun onFailure(call: Call, e: IOException?) {
+                override fun onFailure(call: Call, e: IOException) {
                     ThreadUtil.runOnMainThread(object : Runnable{
                         override fun run() {
                             //隐藏刷新控件
 //                            refreshLayout.isRefreshing = false
                             //回调到view层处理
-                            homeView.onError(e?.message)
+                            homeView.onError(e.message)
                         }
                     })
 //                    myToast("获取数据失败")

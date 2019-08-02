@@ -6,11 +6,7 @@ package com.stone.ktmusicplay.presenter.interf
  * @Description:
  */
 interface HomePresenter {
-    fun loadDatas() {
+    fun loadDatas()
+    fun loadMore(offset: Int)
 
-    }
-
-    fun loadMore(offset: Int) {
-
-    }
 }

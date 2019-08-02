@@ -43,20 +43,19 @@ abstract class BaseFragment : Fragment() , AnkoLogger{
         super.onActivityCreated(savedInstanceState)
         initListener()
         initData()
-        toast("hah")
     }
 
     /**
      * 数据的初始化
      */
-    protected fun initData() {
+    open protected fun initData() {
 
     }
 
     /**
      * adapter listener
      */
-    protected fun initListener() {
+    open protected fun initListener() {
 
     }
 

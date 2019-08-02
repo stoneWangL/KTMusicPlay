@@ -40,4 +40,12 @@ dependencies {
 
     //bottom-bar
     implementation ('com.roughike:bottom-bar:2.3.1')
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //OKHttp
+    implementation("com.squareup.okhttp3:okhttp:4.0.1")
+    //implementation 'de.gerdi-project:GSON:5.2.2'
+    implementation 'com.google.code.gson:gson:2.2.4'
+    //picassc
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }
